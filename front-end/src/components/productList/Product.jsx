@@ -1,17 +1,20 @@
 import React from 'react';
 import { getProductGrossPrice } from '../../utils/getProductGrossPrice';
+import './Product.css'; 
 
 export const Product = ({ product }) => {
-  const availabilityStatus = product.is_salable === 1 ? 'dostepny' : 'niedostepny';
+  const availabilityStatus = product.is_salable === 1 ? 'available' : 'inaccessible';
+  const isNewProduct = product.new_product > 0;
 
   return (
-    <li>
-      <h2>{product.name}</h2>
-      <p>{product.description}</p>
-      <p>{product.manufacturer}</p>
+    <li className={`Product ${availabilityStatus} ${isNewProduct ? 'new' : ''}`}>
+      <h2>Product: {product.name}</h2>
+      <p>Description: {product.description}</p>
+      <p>Producer: {product.manufacturer}</p>
       <p>Availabilty: {availabilityStatus}</p>
-      <p>Gross Price: ${getProductGrossPrice(product)}</p>
-      <p>Stock: {product.stock}</p>
+      <p>Net Price: {product.price}</p>
+      <p>{`Gross Price: ${getProductGrossPrice(product)}`}</p>
+      {isNewProduct && <p>New Product: {product.new_product}</p>}
     </li>
-  )
+  );
 }
