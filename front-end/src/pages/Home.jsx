@@ -23,7 +23,7 @@ export const Home = () => {
 
   return (
     <div className="App">
-      strona główna
+      
       <ProductFilters />
       <ProductsList products={filteredProducts}/>
     </div>
