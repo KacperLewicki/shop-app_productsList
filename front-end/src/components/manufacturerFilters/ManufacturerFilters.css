@@ -1,0 +1,44 @@
+.manufacturer-filters {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .manufacturer-filters h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  
+  .manufacturer-filters label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  
+  .manufacturer-filters input[type="checkbox"] {
+    margin-right: 6px;
+  }
+  
+
+  .manufacturer-filters input[type="checkbox"]:checked + span {
+    font-weight: bold;
+  }
+  
+ 
+  .manufacturer-filters label.active {
+    color: #007bff;
+  }
+  
+ 
+  .manufacturer-filters label.inactive {
+    color: #ccc;
+  }
+  
+ 
+  .manufacturer-filters label:hover {
+    text-decoration: underline;
+  }
