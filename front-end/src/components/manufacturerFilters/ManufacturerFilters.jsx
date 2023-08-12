@@ -1,25 +1,23 @@
 import React, { useContext } from "react";
-import { useSearchParams } from "react-router-dom";
 import { ProductsContext } from "../../context/Products/ProductsContext";
 import { useMultipleCheckbox } from "../../hooks/useMultipleCheckbox";
+import { MANUFACTURER_ARRAY_SEARCH_PARAM } from "./consts";
 import "./ManufacturerFilters.css";
-
 export const ManufacturerFilters = () => {
-  const [searchParams] = useSearchParams();
   const { products } = useContext(ProductsContext);
-  const manufacturerArrayParam = searchParams.getAll('manufacturer[]');
-  const { handleOnChange } = useMultipleCheckbox('manufacturer[]');
+  const { handleOnChange, isCheckboxChecked } = useMultipleCheckbox(MANUFACTURER_ARRAY_SEARCH_PARAM);
 
   const manufacturerTypes = [...new Set(products.map(product => product.manufacturer))];
 
   return (
     <div className="manufacturer-filters">
-      <h3>Manufacturers:</h3>
+      <h3 className="manufacturer-filters-h3">Manufacturers:</h3>
       {manufacturerTypes.map(manufacturer => (
-        <label key={manufacturer}>
+        <label className="manufacturer-filters-label" key={manufacturer}>
           <input
+            className="manufacturer-filters-input"
             type="checkbox"
-            checked={manufacturerArrayParam.includes(manufacturer)}
+            checked={isCheckboxChecked(manufacturer)}
             onChange={() => handleOnChange(manufacturer)}
           />
           {manufacturer}

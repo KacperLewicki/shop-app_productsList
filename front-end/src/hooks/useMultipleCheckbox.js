@@ -1,7 +1,8 @@
 import { useSearchParams } from "react-router-dom";
 
 export function useMultipleCheckbox(arrayParam) {
-  const [,setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const arrayParamValues = searchParams.getAll(arrayParam);
 
   const handleOnChange = (checkboxValue) => {
 
@@ -38,10 +39,14 @@ export function useMultipleCheckbox(arrayParam) {
       prevSearchParams.append(arrayParam, checkboxValue);
       return prevSearchParams;
     });
+  };
 
+  const isCheckboxChecked = (checkboxValue) => {
+    return arrayParamValues.includes(checkboxValue);
   };
 
   return {
-    handleOnChange
+    handleOnChange,
+    isCheckboxChecked
   };
 }

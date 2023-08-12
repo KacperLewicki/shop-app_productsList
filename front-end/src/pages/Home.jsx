@@ -3,17 +3,22 @@ import { useProducts } from "../hooks/useProducts";
 import { ProductsList } from "../components/productList/ProductList";
 import { ProductFilters } from "../components/productFilters/ProductFilters";
 import { ManufacturerFilters } from "../components/manufacturerFilters/ManufacturerFilters";
+import { MANUFACTURER_ARRAY_SEARCH_PARAM } from "../components/manufacturerFilters/consts";
+import { IS_SALABLE_SEARCH_PARAM, AVAILABLE_VALUE } from "../components/productFilters/consts";
+import "./Home.css";
 
 export const Home = () => {
   const [searchParams] = useSearchParams();
   const { products, isError, isLoading } = useProducts();
 
-  const availabilityParam = searchParams.get('is_salable') ?? 1;
-  const manufacturerArrayParam = searchParams.getAll('manufacturer[]');
+  const availabilityParam = searchParams.get(IS_SALABLE_SEARCH_PARAM) ?? AVAILABLE_VALUE;
+  const manufacturerArrayParam = searchParams.getAll(MANUFACTURER_ARRAY_SEARCH_PARAM);
 
-  const filteredProducts = products
-    .filter(product => product.is_salable === parseInt(availabilityParam))
-    .filter(product => manufacturerArrayParam.length ? manufacturerArrayParam.includes(product.manufacturer) : true);
+  let filteredProducts = products.filter(product => product.is_salable === parseInt(availabilityParam));
+
+  if (manufacturerArrayParam.length) {
+    filteredProducts = filteredProducts.filter(product => manufacturerArrayParam.includes(product.manufacturer));
+  }
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -23,12 +28,10 @@ export const Home = () => {
     return <div>Failed to fetch products...</div>;
   }
 
-  console.log(filteredProducts); // you can check how changing the radio buttons changes the products list
-
   return (
     <div className="App">
-      <h1 className='h1-main'>Shop App</h1>
-      <h2>Filters:</h2>
+      <h1 className='Home-h1'>Shop App</h1>
+      <h2 className="Home-h2">Filters:</h2>
       <ManufacturerFilters />
       <ProductFilters />
       <ProductsList products={filteredProducts}/>

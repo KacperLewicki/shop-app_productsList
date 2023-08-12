@@ -3,9 +3,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ProductsProvider } from "../context/Products/ProductsProvider";
 import { Home } from "../pages/Home";
 
-
-import "./App.css"
-
 const router = createBrowserRouter([
   {
     path: "/",
