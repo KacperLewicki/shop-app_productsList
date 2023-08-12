@@ -19,6 +19,14 @@
   
 }
 
+@media (max-width: 600px) {
+  .manufacturer-filters-label {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+}
+
 .manufacturer-filters-input[type="checkbox"] {
   margin-right: 3px;
   vertical-align: middle;
@@ -27,6 +35,8 @@
 .manufacturer-filters-label:hover {
   color: #007bff;
 }
+
+
 
 
 

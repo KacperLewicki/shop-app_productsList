@@ -20,6 +20,14 @@
  
 }
 
+@media (max-width: 600px) {
+  .ProductFilters-label {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+}
+
 .ProductFilters-input[type="checkbox"] {
   margin-right: 3px;
   vertical-align: middle;
