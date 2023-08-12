@@ -1,50 +1,45 @@
 import { useSearchParams } from "react-router-dom";
 import "./ProductFilters.css";
 
+const INACCESSIBLE_VALUE = '0';
+
 export const ProductFilters = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const availabilityParam = searchParams.get('is_salable');
-  const isChecked = availabilityParam === "1";
 
-  const onAvailabilityChange = () => {
+  const isInaccessibleChecked = availabilityParam === INACCESSIBLE_VALUE;
+
+  const onCheckboxChange = (event) => {
+    if (!event.target.checked) {
+        return;
+    }
+
     setSearchParams(prevSearchParams => {
-      if (isChecked) {
+      if (isInaccessibleChecked) {
         prevSearchParams.delete('is_salable');
       } else {
-        prevSearchParams.set('is_salable', '1');
-      }
-      return prevSearchParams;
-    });
-  };
-
-  const onInaccessibleChange = () => {
-    setSearchParams(prevSearchParams => {
-      if (isChecked) {
-        prevSearchParams.set('is_salable', '0');
-      } else {
-        prevSearchParams.delete('is_salable');
+        prevSearchParams.set('is_salable', INACCESSIBLE_VALUE);
       }
       return prevSearchParams;
     });
   };
 
   return (
-    
     <div className="ProductFilters">
       <h3>Products:</h3>
-      <label className={`available ${isChecked ? "checked" : ""}`}>
+      <label>
         <input
           type="checkbox"
-          checked={isChecked}
-          onChange={onAvailabilityChange}
+          checked={availabilityParam === null}
+          onChange={onCheckboxChange}
         />
         Available
       </label>
-      <label className={`inaccessible ${!isChecked ? "checked" : ""}`}>
+      <label>
         <input
           type="checkbox"
-          checked={!isChecked}
-          onChange={onInaccessibleChange}
+          checked={isInaccessibleChecked}
+          onChange={onCheckboxChange}
         />
         Inaccessible
       </label>

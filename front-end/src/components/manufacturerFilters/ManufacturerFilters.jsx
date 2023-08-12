@@ -1,30 +1,26 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
+import { useSearchParams } from "react-router-dom";
 import { ProductsContext } from "../../context/Products/ProductsContext";
+import { useMultipleCheckbox } from "../../hooks/useMultipleCheckbox";
 import "./ManufacturerFilters.css";
 
 export const ManufacturerFilters = () => {
+  const [searchParams] = useSearchParams();
   const { products } = useContext(ProductsContext);
-  const manufacturers = [...new Set(products.map(product => product.manufacturer))];
+  const manufacturerArrayParam = searchParams.getAll('manufacturer[]');
+  const { handleOnChange } = useMultipleCheckbox('manufacturer[]');
 
-  const [selectedManufacturers, setSelectedManufacturers] = useState([]);
-
-  const handleManufacturerChange = (manufacturer) => {
-    const updatedSelectedManufacturers = selectedManufacturers.includes(manufacturer)
-      ? selectedManufacturers.filter(item => item !== manufacturer)
-      : [...selectedManufacturers, manufacturer];
-
-    setSelectedManufacturers(updatedSelectedManufacturers);
-  };
+  const manufacturerTypes = [...new Set(products.map(product => product.manufacturer))];
 
   return (
     <div className="manufacturer-filters">
       <h3>Manufacturers:</h3>
-      {manufacturers.map(manufacturer => (
+      {manufacturerTypes.map(manufacturer => (
         <label key={manufacturer}>
           <input
             type="checkbox"
-            checked={selectedManufacturers.includes(manufacturer)}
-            onChange={() => handleManufacturerChange(manufacturer)}
+            checked={manufacturerArrayParam.includes(manufacturer)}
+            onChange={() => handleOnChange(manufacturer)}
           />
           {manufacturer}
         </label>

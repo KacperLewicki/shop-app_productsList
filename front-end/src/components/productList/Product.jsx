@@ -14,7 +14,7 @@ export const Product = ({ product }) => {
       <p>Availabilty: {availabilityStatus}</p>
       <p>Net Price: {product.price}</p>
       <p>{`Gross Price: ${getProductGrossPrice(product)}`}</p>
-      {isNewProduct && <p>New Product: {product.new_product}</p>}
+      {isNewProduct && <p className='p-new-product'>New Product !!!!!!</p>}
     </li>
   );
 }
