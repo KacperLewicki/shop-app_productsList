@@ -1,44 +1,34 @@
 .manufacturer-filters {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  
-  .manufacturer-filters h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  
-  .manufacturer-filters label {
-    display: block;
-    margin-bottom: 8px;
-    cursor: pointer;
-  }
-  
-  .manufacturer-filters input[type="checkbox"] {
-    margin-right: 6px;
-  }
-  
+ 
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center; 
+}
 
-  .manufacturer-filters input[type="checkbox"]:checked + span {
-    font-weight: bold;
-  }
+.manufacturer-filters-h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+
+}
+
+.manufacturer-filters-label {
+  margin: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 14px;
   
- 
-  .manufacturer-filters label.active {
-    color: #007bff;
-  }
-  
- 
-  .manufacturer-filters label.inactive {
-    color: #ccc;
-  }
-  
- 
-  .manufacturer-filters label:hover {
-    text-decoration: underline;
-  }
+}
+
+.manufacturer-filters-input[type="checkbox"] {
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+.manufacturer-filters-label:hover {
+  color: #007bff;
+}
+
+
+
+
+
