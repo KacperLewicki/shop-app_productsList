@@ -5,7 +5,7 @@
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+ 
   .ProductFilters h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
@@ -16,15 +16,7 @@
     margin-bottom: 8px;
     cursor: pointer;
   }
-  
-  .ProductFilters input[type="checkbox"] {
-    margin-right: 6px;
-  }
-  
-  .ProductFilters input[type="checkbox"]:checked + span {
-    font-weight: bold;
-  }
-  
+   
   .ProductFilters label.active {
     color: #007bff;
   }
