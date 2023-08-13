@@ -1,5 +1,6 @@
-#Junior Developer Recruitment Challenge
-#Task Overview:
+# Junior Developer Recruitment Challenge
+
+## Task Overview:
 
 In this recruitment challenge, we are seeking a junior developer who can demonstrate proficiency in HTML, CSS, JavaScript, React, API integration, and version control using Git. The challenge consists of creating a simple product listing web application that fetches and displays product information from a JSON API.
 
@@ -17,7 +18,7 @@ Technologies and Skills Tested:
 
 You are required to create a basic web application that displays a list of products fetched from a JSON API. The application should have a responsive design and should be built using React components.
 
-#Task Steps:
+## Task Steps:
 
 1. Clone the starter repository from the provided Git repository URL.
 
@@ -46,7 +47,7 @@ You are required to create a basic web application that displays a list of produ
 
 10. Push your completed solution to your GitHub repository and share the repository URL with us.
 
-#Additional Instructions:
+## Additional Instructions:
 
 - Attributes "tax" and "promotion_discount" are expressed as a percentage.
 - Use modern JavaScript ES6+ syntax.
@@ -55,7 +56,7 @@ You are required to create a basic web application that displays a list of produ
 - The design and styling can be minimal but should be presentable.
 - Feel free to add any extra features or improvements beyond the basic requirements if time allows.
 
-#Evaluation Criteria:
+## Evaluation Criteria:
 
 You will be evaluated based on the following criteria:
 
@@ -65,7 +66,7 @@ You will be evaluated based on the following criteria:
 - Responsive design and user experience
 - Proper use of Git for version control
 
-#Submission:
+## Submission:
 
 Please submit your solution by sharing the URL of your Git repository containing the completed challenge. Include a README file with any necessary setup instructions.
 
