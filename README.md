@@ -13,7 +13,7 @@ To run the "shop-app_products-list" app, follow these steps:
 2. Run the command below to install the necessary dependencies "npm install"
 3. After installing all dependencies "npm start"
 
-## URL API PROJEKTU: https://mocki.io/v1/77417064-7559-4d26-8259-6d00f82f9a4a
+## URL API: https://mocki.io/v1/77417064-7559-4d26-8259-6d00f82f9a4a
 
 
 
