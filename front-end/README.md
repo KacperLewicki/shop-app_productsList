@@ -18,4 +18,4 @@ To run the "shop-app_products-list" app, follow these steps:
 
 
 
-## URL API PROJEKTU: https://mocki.io/v1/77417064-7559-4d26-8259-6d00f82f9a4a
+## API URL: https://mocki.io/v1/77417064-7559-4d26-8259-6d00f82f9a4a
